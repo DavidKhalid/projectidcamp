@@ -30,12 +30,11 @@ environment:
 dependencies:
   another_flutter_splash_screen: ^1.0.2
   cupertino_icons: ^1.0.2
-  firebase_auth: ^4.14.1
   flutter:
     sdk: flutter
   flutter_feather_icons: ^2.0.0+1
   google_fonts: ^4.0.3
-  provider: ^6.1.1
+  
 
 dev_dependencies:
   flutter_lints: ^2.0.0
