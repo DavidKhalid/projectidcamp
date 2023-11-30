@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "942833809519",
+    "project_id": "auth-par-project",
+    "storage_bucket": "auth-par-project.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:942833809519:android:6ba265442eb01a58bfb59a",
+        "android_client_info": {
+          "package_name": "com.example.pariwisata_project"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD-KLb6dAwdoHnraWlLw5Ivi3DBR_dzvPE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

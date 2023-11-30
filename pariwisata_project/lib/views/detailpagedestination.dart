@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:pariwisata_project/models/modeltopdestinations.dart';
 import 'package:pariwisata_project/views/fulldetailpagedestination.dart';
 import 'package:pariwisata_project/views/homepage.dart';
 
 class detailpageDestinations extends StatelessWidget {
-  detailpageDestinations({super.key});
+  final topDestinations place;
+  const detailpageDestinations({super.key, required this.place});
 
   @override
   Widget build(BuildContext context) {
@@ -48,8 +50,8 @@ class detailpageDestinations extends StatelessWidget {
             Text(
               textAlign: TextAlign.justify,
               overflow: TextOverflow.ellipsis,
-              maxLines: 6,
-              "It is a long establis. Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in consectetur adipiscing elit, Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do",
+              maxLines: 5,
+              place.description,
               style: GoogleFonts.alegreya(
                   fontWeight: FontWeight.w500, fontSize: 14),
             ),
@@ -60,8 +62,10 @@ class detailpageDestinations extends StatelessWidget {
                 child: TextButton(
               onPressed: () {
                 Navigator.of(context)
-                    .push(MaterialPageRoute(builder: (BuildContext) {
-                  return fulldetailpageDestinations();
+                    .push(MaterialPageRoute(builder: (context) {
+                  return fulldetailpageDestinations(
+                    descriptions: place.description,
+                  );
                 }));
               },
               child: Text(
@@ -100,10 +104,21 @@ class detailpageDestinations extends StatelessWidget {
       children: [
         Padding(
           padding: const EdgeInsets.only(left: 20, top: 5),
-          child: Text(
-            "Address",
-            style:
-                GoogleFonts.alegreya(fontSize: 14, fontWeight: FontWeight.w500),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                "Address",
+                style: GoogleFonts.alegreya(
+                    fontSize: 14, fontWeight: FontWeight.w800),
+              ),
+              Text(
+                overflow: TextOverflow.ellipsis,
+                place.address,
+                style: GoogleFonts.alegreya(
+                    fontSize: 14, fontWeight: FontWeight.w500),
+              ),
+            ],
           ),
         ),
       ],
@@ -117,7 +132,7 @@ class detailpageDestinations extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.only(left: 20, top: 20),
           child: Text(
-            "Name Place",
+            place.placeName,
             style: GoogleFonts.alegreya(
                 fontSize: 28, fontWeight: FontWeight.w700, color: Colors.black),
           ),
@@ -134,10 +149,7 @@ class detailpageDestinations extends StatelessWidget {
       decoration: BoxDecoration(
         color: Colors.grey.shade400,
         image: DecorationImage(
-            image: NetworkImage(
-              topdestinations[0].image.toString(),
-            ),
-            fit: BoxFit.cover),
+            image: NetworkImage(place.imageUrl), fit: BoxFit.cover),
         borderRadius: BorderRadius.circular(25),
       ),
     );

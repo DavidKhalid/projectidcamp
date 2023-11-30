@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:another_flutter_splash_screen/another_flutter_splash_screen.dart';
-import 'package:pariwisata_project/views/homepage.dart';
+//import 'package:pariwisata_project/views/homepage.dart';
+import 'package:pariwisata_project/views/loginpage.dart';
 
 class splashScreen extends StatefulWidget {
   const splashScreen({super.key});
@@ -30,7 +31,7 @@ class _splashScreenState extends State<splashScreen> {
         ),
         onAnimationEnd: () => debugPrint("On Fade In End"),
         duration: const Duration(seconds: 5),
-        nextScreen: const HomePage(),
+        nextScreen: const LoginPage(),
       ),
     );
   }
